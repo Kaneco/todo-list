@@ -1,0 +1,35 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "To-Do List JS app",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^5.0.0-alpha1",
+    "bootstrap-icons": "^1.0.0",
+    "date-fns": "^2.16.1",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "scripts": {
+    "build": "webpack",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kaneco/todo-list.git"
+  },
+  "keywords": [
+    "js",
+    "todo",
+    "list"
+  ],
+  "author": "Kaneco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kaneco/todo-list/issues"
+  },
+  "homepage": "https://github.com/Kaneco/todo-list#readme"
+}
