@@ -1,0 +1,122 @@
+/* #E3E3E3 Gray  #F6F6F8 White #C60021 Red*/
+
+body {
+    background-color: #f6f6f8;
+}
+
+#logo {
+	text-align: center;
+}
+
+
+/* Mobile Responsive Navigation */
+#sb-wrapper {
+	width: 100px;
+    flex-direction: column;
+    border-right: 1px solid #ddd;
+    font-size: 16px;
+}
+
+#sb-wrapper h4 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    background-color: #cecece;
+    border-bottom: 1px solid #ddd;
+}
+
+#sb-wrapper i {
+	margin-right: 15px;
+}
+
+
+.sidebar-text {
+	display: none;
+}
+
+#sb-wrapper a {
+    font-size: 1.4rem;
+    padding: 2px 2px 2px 22px;
+	text-decoration: none;
+	display: inline-block;
+	transition: 0.3s;
+}
+
+#sb-wrapper a:hover {
+    background-color:#F6F6F8;
+}
+
+#logo > h3 {
+	display: none; /* Hide Text Logo */
+	transition: all 1.5s ease;
+}
+
+.task-menu {
+}
+
+.fa-exclamation-circle {
+	
+}
+
+
+/* Desktop Responsive Navigation */
+@media (min-width: 576px) {
+	#sb-wrapper {
+		width: 250px;
+	}
+
+	#sb-wrapper a {
+		font-size: 1rem;
+	}
+
+	.sidebar-text {
+		display: inline-block;
+    }
+    
+    #sb-wrapper h4 {
+        font-size: 1.4rem;
+    }
+    
+
+	#logo > h3 {
+		/* Display Text Logo */
+		color: #c60021;
+		font-size: 26px;
+		font-weight: bold;
+		font-style: italic;
+		display: inline-block;
+		vertical-align: sub;
+		transition: all 1.5s ease;
+		text-transform: lowercase;
+	}
+
+	/* The navigation menu links */
+	.sidenav a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		display: block;
+		transition: 0.3s;
+	}
+}
+
+/* The side navigation menu */
+.sidenav {
+	height: 100%; /* 100% Full-height */
+	width: 250px; /* 0 width - change this with JavaScript */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Stay on top */
+	top: 0; /* Stay at the top */
+	left: 0;
+	background-color: #e3e3e3; /* Black*/
+	overflow-x: hidden; /* Disable horizontal scroll */
+	overflow-y: hidden; /* Disable horizontal scroll */
+	padding-top: 10px; /* Place content 10px from the top */
+	transition: 0.5s; /* 0.6 second transition effect to slide in the sidenav */
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+	transition: margin-left 1s;
+	padding: 20px;
+	margin-left: 250px;
+}
