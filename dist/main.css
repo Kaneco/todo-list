@@ -1,49 +1,76 @@
+/* Color Palette */
 /* #E3E3E3 Gray  #F6F6F8 White #C60021 Red*/
 
+/* Global Styling */
 body {
-    background-color: #f6f6f8;
+	background-color: #f6f6f8;
+}
+
+a {
+	text-decoration: none !important;
 }
 
 #logo {
 	text-align: center;
 }
 
+#sb-wrapper ul {
+	list-style: none; /* Remove default bullets */
+}
+
+#sb-wrapper ul li::before {
+	list-style-type: square;
+	color: red; /* Change the color */
+	font-weight: bold; /* If you want it to be bold */
+	display: inline-block; /* Needed to add space between the bullet and the text */
+	width: 1em; /* Also needed for space (tweak if needed) */
+	margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
 
 /* Mobile Responsive Navigation */
 #sb-wrapper {
 	width: 100px;
-    flex-direction: column;
-    border-right: 1px solid #ddd;
-    font-size: 16px;
+	flex-direction: column;
+	border-right: 1px solid #ddd;
+	font-size: 16px;
 }
 
 #sb-wrapper h4 {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 1.1rem;
-    background-color: #cecece;
-    border-bottom: 1px solid #ddd;
+	text-align: center;
+	margin-top: 10px;
+	font-size: 1rem;
+	background-color: #cecece;
+	padding: 5px;
+	border-bottom: 3px solid #ddd;
 }
 
-#sb-wrapper i {
-	margin-right: 15px;
+#sb-wrapper .menu-tasks {
+	padding: 2px 2px 2px 22px;
+	-webkit-animation: fadeIn 0.9s;
+	animation: fadeIn 0.9s;
 }
-
 
 .sidebar-text {
+	/* Hide sidebar tasks Text */
 	display: none;
 }
 
-#sb-wrapper a {
-    font-size: 1.4rem;
-    padding: 2px 2px 2px 22px;
-	text-decoration: none;
-	display: inline-block;
-	transition: 0.3s;
+.menu-tasks {
+	/* Tasks icon size */
+	font-size: 1.4rem;
+}
+
+.menu-projects {
+	/* Projects text size */
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-size: 0.6rem;
+	display: block;
+	width: 100%;
 }
 
 #sb-wrapper a:hover {
-    background-color:#F6F6F8;
+	background-color: #f6f6f8;
 }
 
 #logo > h3 {
@@ -51,13 +78,20 @@ body {
 	transition: all 1.5s ease;
 }
 
-.task-menu {
+#sb-wrapper input[type="text"] {
+	font-size: 0.9rem;
+	padding: 5px;
 }
 
-.fa-exclamation-circle {
-	
+#btn-addproject {
+	display: none;
 }
 
+#main { /* Main content display */
+    transition: margin-left 0.5s;
+    padding: 20px;
+    margin-left: 100px;
+}
 
 /* Desktop Responsive Navigation */
 @media (min-width: 576px) {
@@ -71,12 +105,11 @@ body {
 
 	.sidebar-text {
 		display: inline-block;
-    }
-    
-    #sb-wrapper h4 {
-        font-size: 1.4rem;
-    }
-    
+	}
+
+	#sb-wrapper h4 {
+		font-size: 1.4rem;
+	}
 
 	#logo > h3 {
 		/* Display Text Logo */
@@ -86,16 +119,27 @@ body {
 		font-style: italic;
 		display: inline-block;
 		vertical-align: sub;
-		transition: all 1.5s ease;
+		-webkit-animation: fadeIn 0.8s;
+		animation: fadeIn 0.8s;
 		text-transform: lowercase;
 	}
 
 	/* The navigation menu links */
 	.sidenav a {
 		padding: 8px 8px 8px 32px;
-		text-decoration: none;
 		display: block;
 		transition: 0.3s;
+	}
+
+	#btn-addproject {
+		display: inline;
+	}
+
+	/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+	#main {
+		transition: margin-left 0.5s;
+		padding: 20px;
+		margin-left: 250px;
 	}
 }
 
@@ -114,9 +158,26 @@ body {
 	transition: 0.5s; /* 0.6 second transition effect to slide in the sidenav */
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-	transition: margin-left 1s;
-	padding: 20px;
-	margin-left: 250px;
+/* FadeIn animation for responsive elements */
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	40% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	40% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
