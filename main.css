@@ -87,10 +87,22 @@ a {
 	display: none;
 }
 
-#main { /* Main content display */
-    transition: margin-left 0.5s;
-    padding: 20px;
-    margin-left: 100px;
+#main-wrapper {
+	/* Main content display */
+	transition: margin-left 0.5s;
+	padding: 20px;
+	margin-left: 100px;
+}
+
+#content {
+	background: #ffffff;
+	border-radius: 5px;
+
+	box-shadow: 0px 0px 30px 5px #e3e3e3;
+	flex-direction: column;
+	overflow: hidden;
+	padding-bottom: 60px;
+	position: relative;
 }
 
 /* Desktop Responsive Navigation */
@@ -136,7 +148,7 @@ a {
 	}
 
 	/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-	#main {
+	#main-wrapper {
 		transition: margin-left 0.5s;
 		padding: 20px;
 		margin-left: 250px;
@@ -151,7 +163,7 @@ a {
 	z-index: 1; /* Stay on top */
 	top: 0; /* Stay at the top */
 	left: 0;
-	background-color: #e3e3e3; /* Black*/
+	background-color: rgb(227, 227, 227); /* Black*/
 	overflow-x: hidden; /* Disable horizontal scroll */
 	overflow-y: hidden; /* Disable horizontal scroll */
 	padding-top: 10px; /* Place content 10px from the top */
