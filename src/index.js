@@ -4,6 +4,7 @@ import '@fortawesome/fontawesome-free/js/fontawesome'
 import '@fortawesome/fontawesome-free/js/solid'
 import '@fortawesome/fontawesome-free/js/regular'
 import '@fortawesome/fontawesome-free/js/brands'
+import { format, formatDistance, formatRelative, subDays } from 'date-fns'
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav() {
