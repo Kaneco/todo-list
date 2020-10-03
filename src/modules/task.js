@@ -1,6 +1,9 @@
 let taskList = [];
 
 const taskOperations = {
+	getId() {
+		return this.id;
+	},
 	getTitle() {
 		return this.title;
 	},
@@ -21,26 +24,28 @@ const taskOperations = {
 	},
 	getPriority() {
 		return this.priority;
+    },
+    setNote(note) {
+		this.note = note;
+	},
+	getNote() {
+		return this.note;
 	},
 };
 
 // Task factory
 const createTask = (title) => {
-    let task = Object.create(taskOperations);
-    task.title= title;
+	let task = Object.create(taskOperations);
+	task.id = 0;
+    task.title = title;
     task.dateCreated= new Date();
     task.dateDue= "";
     task.priority= false;
     task.note= "";
     task.done= false;
-    task.projectID= 0;
 	return task
 };
 
-task1 = createTask("task1Title");
-taskList.push(task1);
-task2 = createTask("task22222Title");
-taskList.push(task2);
 
 
 // task1 = createTask("task1Title");
@@ -52,4 +57,4 @@ taskList.push(task2);
 //   console.log(key, task1[key]);
 // }
 
-export { taskOperations, createTask }
+export { taskOperations, createTask };

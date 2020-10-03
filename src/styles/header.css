@@ -1,0 +1,40 @@
+#search-bar{
+    margin-left: 100px;
+    font-size: 10px;
+}
+
+#search-bar .fa-search {
+    position: relative;
+    display:inline-block;
+
+}
+
+#search-bar .input-group {
+ width: 150px;
+}
+
+#search-bar .input-group-text {
+    background-color: white;
+    border-right: 0px;
+}
+
+#search-bar .form-control {
+    border-left: 0px;
+}
+
+#sidebar-toggle {
+    position: absolute;
+    left: 10px;
+}
+
+/* Desktop Responsive Navigation */
+@media (min-width: 576px) {
+    
+    #search-bar{
+        margin-left: 250px;
+    }
+
+    #search-bar .input-group {
+        width: 500px;
+       }
+}
