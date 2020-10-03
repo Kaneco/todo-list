@@ -10,6 +10,16 @@ a {
 	text-decoration: none !important;
 }
 
+#bgimg{
+ 
+    width:400px; /* you can use % */
+    height: auto;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: -100;
+}
+
 #logo {
 	text-align: center;
 }
@@ -34,6 +44,7 @@ a {
 	border-right: 1px solid #ddd;
 	font-size: 16px;
 }
+
 
 #sb-wrapper h4 {
 	text-align: center;
@@ -91,7 +102,7 @@ a {
 	/* Main content display */
 	transition: margin-left 0.5s;
 	padding: 20px;
-	margin-left: 100px;
+    margin-left: 100px;
 }
 
 #content {
@@ -101,9 +112,11 @@ a {
 	box-shadow: 0px 0px 30px 5px #e3e3e3;
 	flex-direction: column;
 	overflow: hidden;
-	padding-bottom: 60px;
-	position: relative;
+	padding-bottom: 0px;
+    position: relative;
 }
+
+
 
 /* Desktop Responsive Navigation */
 @media (min-width: 576px) {
@@ -152,7 +165,8 @@ a {
 		transition: margin-left 0.5s;
 		padding: 20px;
 		margin-left: 250px;
-	}
+    }
+
 }
 
 /* The side navigation menu */
