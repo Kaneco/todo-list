@@ -1,58 +1,51 @@
-import { taskOperations, createTask } from "./task";
+import { taskManager, createTask } from "./task";
 import * as localStorage from "./localStorage";
 
 // Project factory
 const createProject = (name) => {
 	let tasks = [];
 
-	//Get task list from a project
 	const getTasks = () => tasks;
 
 	const addTask = (task) => {
-		// Add task with the correct ID
-		if ((getTasks().length = 0)) {
-			// If task list is empty simply add task (because default ID is 0), otherwise calculate ID
-			tasks.push(task);
-		} else {
-			task.setId(calculateTaskId());
-			tasks.push(task);
-		}
+		tasks.push(task);
 	};
 
-	// Remove task from project
-	const removeTask = (task) => {
-		let tasks = tasks.filter((elem) => {
-			elem.name != task.name && elem.dateCreated != task.dateCreated;
-		});
-	};
-
-	const calculateTaskId = () => {
-		tasks = getTasks();
-		return tasks[tasks.length - 1].id;
-	};
+	const removeTask = (task) => {};
 
 	const editTask = (newValue, property, task) => {
-    tasks = getTasks();
 		//find the index of object from array that you want to update
-		const foundTaskIndex = tasks.findIndex((x) => {x.id === task.id});
-    tasks[objIndex][property] = newValue;
+		let taskId = findTaskIndex(task);
+		// tasks[taskId][property] = newValue;
 		// // make new object of updated object.
-		// const updatedObj = { ...tasks[foundTaskIndex], [property]: newValue };
-
+		const updatedTask = { ...tasks[taskId], [property]: newValue };
 		// // make final new array of objects by combining updated object.
-		// const updatedProjects = [
-		// 	...projects.slice(0, objIndex),
-		// 	updatedObj,
-		// 	...projects.slice(objIndex + 1),
-    // ];
-    return tasks;
+		const updatedTaskList = [
+			...tasks.slice(0, taskId),
+			updatedTask,
+			...tasks.slice(taskId + 1),
+		];
+		return updatedTaskList;
 	};
 
-	const getTaskInfo = (value, task) => {
+	// Find Task Index by comparing the DateCreated value
+	// DateCreated is a Date() object which should serve as a unique identifier for each task
+	const findTaskIndex = (task) => {
 		tasks = getTasks();
+		const foundTaskIndex = tasks.findIndex((x) => {
+			taskManager.getDateCreated(x).getTime() ===
+				taskManager.getDateCreated(task).getTime() &&
+				taskManager.getTitle(x) === taskManager.getTitle(task)
+		});
+		return foundTaskIndex;
 	};
 
-	return { name, tasks, getTasks, addTask, removeTask, calculateTaskIndex };
+	const getTaskInfo = (property, task) => {
+		let taskId = findTaskIndex(task);
+		return tasks[taskId][property];
+	};
+
+	return { name, tasks, getTasks, addTask, removeTask, editTask, getTaskInfo };
 };
 
 // Get TaskList from a Project from storage and convert it into a project object again
@@ -61,10 +54,17 @@ const getProject = (name) => {
 	return createProject(name, projectTaskList);
 };
 
-let test1 = createProject("test1");
-localStorage.addProject(test1.name, test1.getTasks());
+let test1Project = createProject("test1");
+let task1 = createTask("Task1");
+let task2 = createTask("Task2");
+let task3 = createTask("Task3");
+test1Project.addTask(task1);
+test1Project.addTask(task2);
+test1Project.addTask(task3);
+console.log(test1Project);
+console.log(test1Project.getTasks());
+console.log(test1Project.findTaskIndex(task2));
 
-console.log(getProject("test1"));
-console.log(getProject("test1").calculateTaskIndex());
+//localStorage.addProject(test1Project.name, test1Project.getTasks());
 
 export { createProject, getProject };

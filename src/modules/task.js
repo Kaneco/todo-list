@@ -1,51 +1,49 @@
 let taskList = [];
 
-const taskOperations = {
-	getId() {
-		return this.id;
-	},
-	getTitle() {
-		return this.title;
-	},
-	setTitle(title) {
-		this.title = title;
-	},
-	getDateCreated() {
-		return this.dateCreated;
-	},
-	setDateDue(dateDue) {
-		this.dateDue = dateDue;
-	},
-	getDateDue() {
-		return this.dateDue;
-	},
-	setPriority(priority) {
-		this.priority = priority;
-	},
-	getPriority() {
-		return this.priority;
-    },
-    setNote(note) {
-		this.note = note;
-	},
-	getNote() {
-		return this.note;
-	},
+class taskOperations {
+	getTitle(task) {
+		return task.title;
+	}
+	setTitle(task, title) {
+		task.title = title;
+	}
+	getDateCreated(task) {
+		return new Date(task.dateCreated); //convert back to date format
+	}
+	setDateDue(task, dateDue) {
+		task.dateDue = dateDue;
+	}
+	getDateDue(task) {
+		return task.dateDue;
+	}
+	setPriority(task, priority) {
+		task.priority = priority;
+	}
+	getPriority(task) {
+		return task.priority;
+    }
+    setNote(task, note) {
+		task.note = note;
+	}
+	getNote(task) {
+		return task.note;
+	}
 };
 
 // Task factory
 const createTask = (title) => {
-	let task = Object.create(taskOperations);
-	task.id = 0;
+	const task = {};
     task.title = title;
-    task.dateCreated= new Date();
+    task.dateCreated= new Date().toJSON(); // convert to a format that isn't distorted by json stringify
     task.dateDue= "";
     task.priority= false;
-    task.note= "";
-    task.done= false;
+	task.note = "";
+	task.done = false;
 	return task
 };
 
+const taskManager = new taskOperations();
+Object.freeze(taskManager);
 
 
 // task1 = createTask("task1Title");
@@ -57,4 +55,4 @@ const createTask = (title) => {
 //   console.log(key, task1[key]);
 // }
 
-export { taskOperations, createTask };
+export { taskManager, createTask };
