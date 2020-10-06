@@ -165,6 +165,30 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/header.css":
+/*!*********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/header.css ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);\n// Module\n___CSS_LOADER_EXPORT___.push([module.i, \"#search-bar{\\n    margin-left: 100px;\\n    font-size: 10px;\\n}\\n\\n#search-bar .fa-search {\\n    position: relative;\\n    display:inline-block;\\n\\n}\\n\\n#search-bar .input-group {\\n width: 150px;\\n}\\n\\n#search-bar .input-group-text {\\n    background-color: white;\\n    border-right: 0px;\\n}\\n\\n#search-bar .form-control {\\n    border-left: 0px;\\n}\\n\\n#sidebar-toggle {\\n    position: absolute;\\n    left: 10px;\\n}\\n\\n/* Desktop Responsive Navigation */\\n@media (min-width: 576px) {\\n    \\n    #search-bar{\\n        margin-left: 250px;\\n    }\\n\\n    #search-bar .input-group {\\n        width: 500px;\\n       }\\n}\", \"\"]);\n// Exports\n/* harmony default export */ __webpack_exports__[\"default\"] = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack:///./src/styles/header.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/tasks.css":
+/*!********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/tasks.css ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);\n// Module\n___CSS_LOADER_EXPORT___.push([module.i, \"\\n/* Task List Styling */\\n.task {\\n    border: 1px solid #e3e3e3;\\n    border-radius: 5px;\\n\\ttransition: all 300ms;\\n}\\n\\n.task:hover {\\n    background-color: #e3e3e3;\\n    opacity: 1;\\n}\\n\\n.task:active {\\nborder-color: #0d6efd;\\n    opacity: 1;\\n}\\n\\n.taskTitle {\\n\\tmargin: 0px 5px 0px 5px;\\n\\tfont-weight: 500;\\n}\\n\\n.taskDone { \\t/* When task is marked as checked */\\n\\tbackground-color: #e3e3e3;\\n\\ttext-decoration: line-through;\\n\\topacity: 0.6;\\n}\\n\\n.task .form-check-input {\\n\\t/* Rounded checkbox */\\n    border-radius: 10px !important;\\n    margin-left: 5px;\\n    cursor: pointer;\\n    font-size: 12px;\\n}\\n\\n.task span { \\t/* FA icons for task operations */\\n    cursor: pointer;\\n\\tfont-size: 0.8em;\\n\\topacity: 0.4;\\n\\ttransition: all 400ms;\\n}\\n\\n#create-task{\\n  padding: 15px 5px 5px 5px;\\n  line-height: 1;\\n  font-size: 0.8rem;\\n  border: 1px;\\n}\\n\\n#create-task input  {\\n    line-height: 1;\\n    font-size: 0.8rem;\\n    min-height:0;\\n    background-color: #0d6dfd1e;\\n}\\n\\n#create-task .btn {\\n    line-height: 1;\\n    font-size: 0.8rem;\\n\\n}\", \"\"]);\n// Exports\n/* harmony default export */ __webpack_exports__[\"default\"] = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack:///./src/styles/tasks.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/runtime/api.js":
 /*!*****************************************************!*\
   !*** ./node_modules/css-loader/dist/runtime/api.js ***!
@@ -3029,6 +3053,18 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 
 /***/ }),
 
+/***/ "./src/images/todo.jpg":
+/*!*****************************!*\
+  !*** ./src/images/todo.jpg ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"a4e283545c88526a83183051a6b8684f.jpg\");\n\n//# sourceURL=webpack:///./src/images/todo.jpg?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -3037,7 +3073,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.esm.js\");\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ \"./node_modules/bootstrap/dist/css/bootstrap.min.css\");\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/fontawesome */ \"./node_modules/@fortawesome/fontawesome-free/js/fontawesome.js\");\n/* harmony import */ var _fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _fortawesome_fontawesome_free_js_solid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/solid */ \"./node_modules/@fortawesome/fontawesome-free/js/solid.js\");\n/* harmony import */ var _fortawesome_fontawesome_free_js_solid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_solid__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _fortawesome_fontawesome_free_js_regular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/regular */ \"./node_modules/@fortawesome/fontawesome-free/js/regular.js\");\n/* harmony import */ var _fortawesome_fontawesome_free_js_regular__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_regular__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _fortawesome_fontawesome_free_js_brands__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/brands */ \"./node_modules/@fortawesome/fontawesome-free/js/brands.js\");\n/* harmony import */ var _fortawesome_fontawesome_free_js_brands__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_brands__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _modules_project__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/project */ \"./src/modules/project.js\");\n/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ \"./node_modules/date-fns/esm/index.js\");\n\n\n\n\n\n\n\n\n\n/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */\nfunction openNav() {\n\tdocument.getElementById(\"sb-wrapper\").style.width = \"250px\";\n\tdocument.getElementById(\"main\").style.marginLeft = \"250px\";\n}\n\n/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */\nfunction closeNav() {\n\tdocument.getElementById(\"sb-wrapper\").style.width = \"0\";\n\tdocument.getElementById(\"main\").style.marginLeft = \"0\";\n}\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.esm.js\");\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ \"./node_modules/bootstrap/dist/css/bootstrap.min.css\");\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/fontawesome */ \"./node_modules/@fortawesome/fontawesome-free/js/fontawesome.js\");\n/* harmony import */ var _fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _fortawesome_fontawesome_free_js_solid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/solid */ \"./node_modules/@fortawesome/fontawesome-free/js/solid.js\");\n/* harmony import */ var _fortawesome_fontawesome_free_js_solid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_solid__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _fortawesome_fontawesome_free_js_regular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/regular */ \"./node_modules/@fortawesome/fontawesome-free/js/regular.js\");\n/* harmony import */ var _fortawesome_fontawesome_free_js_regular__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_regular__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _fortawesome_fontawesome_free_js_brands__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/brands */ \"./node_modules/@fortawesome/fontawesome-free/js/brands.js\");\n/* harmony import */ var _fortawesome_fontawesome_free_js_brands__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_brands__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _styles_header_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/header.css */ \"./src/styles/header.css\");\n/* harmony import */ var _styles_header_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_header_css__WEBPACK_IMPORTED_MODULE_6__);\n/* harmony import */ var _styles_tasks_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/tasks.css */ \"./src/styles/tasks.css\");\n/* harmony import */ var _styles_tasks_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_tasks_css__WEBPACK_IMPORTED_MODULE_7__);\n/* harmony import */ var _images_todo_jpg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./images/todo.jpg */ \"./src/images/todo.jpg\");\n/* harmony import */ var _modules_project__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/project */ \"./src/modules/project.js\");\n/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ \"./node_modules/date-fns/esm/index.js\");\n\n\n\n\n\n\n\n\n\n\n\n\n/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */\nfunction openNav() {\n\tdocument.getElementById(\"sb-wrapper\").style.width = \"250px\";\n\tdocument.getElementById(\"main\").style.marginLeft = \"250px\";\n}\n\n/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */\nfunction closeNav() {\n\tdocument.getElementById(\"sb-wrapper\").style.width = \"0\";\n\tdocument.getElementById(\"main\").style.marginLeft = \"0\";\n}\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -3074,6 +3110,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"taskManager\", function() { return taskManager; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createTask\", function() { return createTask; });\n// Singleton Object for managing task operations (getters/setters)\nclass taskOperations {\n\tgetTitle(task) {\n\t\treturn task.title;\n\t}\n\tsetTitle(task, title) {\n\t\ttask.title = title;\n\t}\n\tgetDateCreated(task) {\n\t\treturn new Date(task.dateCreated); //convert back to date format\n\t}\n\tsetDateDue(task, dateDue) {\n\t\ttask.dateDue = dateDue;\n\t}\n\tgetDateDue(task) {\n\t\treturn task.dateDue;\n\t}\n\tsetPriority(task, priority) {\n\t\ttask.priority = priority;\n\t}\n\tgetPriority(task) {\n\t\treturn task.priority;\n\t}\n\tsetNote(task, note) {\n\t\ttask.note = note;\n\t}\n\tgetNote(task) {\n\t\treturn task.note;\n\t}\n}\n\n// Task factory\nconst createTask = (title) => {\n\tconst task = {};\n\ttask.title = title;\n\ttask.dateCreated = new Date().toJSON(); // convert to a format that isn't distorted by json stringify\n\ttask.dateDue = \"\";\n\ttask.priority = false;\n\ttask.note = \"\";\n\ttask.done = false;\n\treturn task;\n};\n\n//Create Singleton\nconst taskManager = new taskOperations();\nObject.freeze(taskManager);\n\n\n\n\n//# sourceURL=webpack:///./src/modules/task.js?");
+
+/***/ }),
+
+/***/ "./src/styles/header.css":
+/*!*******************************!*\
+  !*** ./src/styles/header.css ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./header.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/header.css\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack:///./src/styles/header.css?");
+
+/***/ }),
+
+/***/ "./src/styles/tasks.css":
+/*!******************************!*\
+  !*** ./src/styles/tasks.css ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./tasks.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/tasks.css\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack:///./src/styles/tasks.css?");
 
 /***/ })
 
