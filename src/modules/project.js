@@ -11,41 +11,98 @@ const createProject = (name) => {
 		tasks.push(task);
 	};
 
-	const removeTask = (task) => {};
-
-	const editTask = (newValue, property, task) => {
-		//find the index of object from array that you want to update
+	// Remove task and return updated taskList
+	const removeTask = (task) => {
 		let taskId = findTaskIndex(task);
-		// tasks[taskId][property] = newValue;
-		// // make new object of updated object.
-		const updatedTask = { ...tasks[taskId], [property]: newValue };
-		// // make final new array of objects by combining updated object.
-		const updatedTaskList = [
+		tasks.splice(taskId, 1);
+		return tasks;
+	};
+
+	const editTask = (task, property, newValue) => {
+		let taskId = findTaskIndex(task);
+		// //Change task attribute according to property using the delegation function taskAction()
+		const updatedTask = taskAction(task, property, newValue);
+		// // make final array of objects by combining updated object.
+		tasks = [
 			...tasks.slice(0, taskId),
 			updatedTask,
 			...tasks.slice(taskId + 1),
 		];
-		return updatedTaskList;
+		return tasks;
 	};
 
-	// Find Task Index by comparing the DateCreated value
+	// Main function to delegate task operations to respective getters and setters
+	// Delegates from editTask() and getTaskInfo() to the Task Module TaskManager
+	const taskAction = (task, property, value) => {
+		if (value === undefined) {
+			switch (property) {
+				case "title":
+					return taskManager.getTitle(task);
+				case "dateCreated":
+					return taskManager.getDateCreated(task);
+				case "dateDue":
+					return taskManager.getDateDue(task);
+				case "priority":
+					return taskManager.getPriority(task);
+				case "note":
+					return taskManager.getNote(task);
+				default:
+					console.error(
+						"Error accessing Getter for task - Property Name not valid"
+					);
+					break;
+			}
+		} else {
+			switch (property) {
+				case "title":
+					taskManager.setTitle(task, value);
+					return task;
+				case "dateDue":
+					taskManager.setDateDue(task, value);
+					return task;
+				case "priority":
+					taskManager.setPriority(task, value);
+					return task;
+				case "note":
+					taskManager.setNote(task, value);
+					return task;
+				default:
+					console.error(
+						"Error accessing Setter for task - Property Name not valid"
+					);
+					break;
+			}
+		}
+	};
+
+	// Find Task Index
 	// DateCreated is a Date() object which should serve as a unique identifier for each task
 	const findTaskIndex = (task) => {
 		tasks = getTasks();
-		const foundTaskIndex = tasks.findIndex((x) => {
-			taskManager.getDateCreated(x).getTime() ===
-				taskManager.getDateCreated(task).getTime() &&
+		// compare both DateCreated and Name to get a unique identifier
+		const foundTaskIndex = tasks.findIndex(
+			(x) =>
+				taskManager.getDateCreated(x).getTime() ===
+					taskManager.getDateCreated(task).getTime() &&
 				taskManager.getTitle(x) === taskManager.getTitle(task)
-		});
+		);
 		return foundTaskIndex;
 	};
 
-	const getTaskInfo = (property, task) => {
+	const getTaskInfo = (task, property) => {
 		let taskId = findTaskIndex(task);
-		return tasks[taskId][property];
+		return taskAction(task, property);
 	};
 
-	return { name, tasks, getTasks, addTask, removeTask, editTask, getTaskInfo };
+	return {
+		name,
+		tasks,
+		getTasks,
+		addTask,
+		removeTask,
+		editTask,
+		getTaskInfo,
+	};
 };
 
 // Get TaskList from a Project from storage and convert it into a project object again
@@ -62,9 +119,6 @@ test1Project.addTask(task1);
 test1Project.addTask(task2);
 test1Project.addTask(task3);
 console.log(test1Project);
-console.log(test1Project.getTasks());
-console.log(test1Project.findTaskIndex(task2));
-
-//localStorage.addProject(test1Project.name, test1Project.getTasks());
+console.log(test1Project.editTask(task3, "note", "testntttte"));
 
 export { createProject, getProject };
