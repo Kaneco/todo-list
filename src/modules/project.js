@@ -94,6 +94,7 @@ const createProject = (name) => {
 		return taskAction(task, property);
 	};
 
+
 	return {
 		name,
 		tasks,
@@ -111,14 +112,15 @@ const getProject = (name) => {
 	return createProject(name, projectTaskList);
 };
 
-let test1Project = createProject("test1");
-let task1 = createTask("Task1");
-let task2 = createTask("Task2");
-let task3 = createTask("Task3");
-test1Project.addTask(task1);
-test1Project.addTask(task2);
-test1Project.addTask(task3);
-console.log(test1Project);
-console.log(test1Project.editTask(task3, "note", "testntttte"));
+// let test1Project = createProject("test1");
+// let task1 = createTask("Task1");
+// let task2 = createTask("Task2");
+// let task3 = createTask("Task3");
+// test1Project.addTask(task1);
+// test1Project.addTask(task2);
+// test1Project.addTask(task3);
+// console.log(test1Project);
+// console.log(test1Project.getTaskInfo(task3, "note"));
+// console.log(getProject("test1").getTaskInfo(task3, "note"));
 
 export { createProject, getProject };

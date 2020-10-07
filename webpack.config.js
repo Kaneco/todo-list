@@ -6,7 +6,6 @@ module.exports = {
 	output: {
 		filename: "main.js",
 		path: path.resolve(__dirname, "dist"),
-		publicPath: "localhost:8080",
 	},
 	devServer: {
 		contentBase: [path.join(__dirname, "src"), path.join(__dirname, "dist")],
