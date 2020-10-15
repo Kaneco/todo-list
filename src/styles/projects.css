@@ -1,0 +1,62 @@
+/* Project Header Formatting */
+#project-header {
+	display: grid;
+	grid-template-columns: 75% 25%;
+	grid-template-rows: auto;
+	align-items: baseline;
+}
+
+#project-view-title {
+	grid-column: 1 / span 1;
+}
+
+#project-header #project-settings {
+	grid-column: 2 / span 1;
+	grid-row: 1;
+	justify-self: end;
+}
+
+#project-settings svg {
+	margin-right: 8px;
+	cursor: pointer;
+	opacity: 0.2;
+	transition: all 0.3s;
+}
+
+#project-settings svg:hover {
+	opacity: 1;
+	transform: scale(1.1);
+}
+
+#project-settings svg:active {
+	transform: scale(0.9);
+}
+
+/* Project Sidebar Formatting */
+#project-list svg {
+}
+
+#sb-wrapper a:hover {
+	background-color: #f6f6f8;
+}
+#sb-wrapper a:active {
+	background-color: #f6f6f8;
+	scale: 0.92;
+}
+
+.project-list-sb {
+	cursor: pointer;
+	/* Projects text size */
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-size: 0.6rem;
+	display: block;
+	width: 100%;
+}
+
+.project-list-sb * {
+	/* To avoid trigering events when clicking the Icon or Span elements inside the project menu
+    This is necessary because I am using eventDelegation and makes it easier to get the text 
+    content without attributing a ID for each project link */
+	pointer-events: none;
+}

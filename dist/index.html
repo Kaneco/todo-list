@@ -7,8 +7,8 @@
     <title></title>
     <meta name="description" content="ToDo List" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script> -->
+     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="main.css" />
     <!-- <link rel="stylesheet" href="../src/styles/tasks.css" />
     <link rel="stylesheet" href="../src/styles/header.css" /> -->
@@ -17,7 +17,8 @@
 
 <body>
     <nav id="search-bar" class="navbar navbar-light bg-light justify-content-center">
-        <button id="sidebar-toggle" type="button" class="btn btn-light btn-sm"><span class="navbar-toggler-icon"></span></button>
+        <button id="sidebar-toggle" type="button" class="btn btn-light btn-sm"><span
+                class="navbar-toggler-icon"></span></button>
 
         <div class="input-group">
             <div class="input-group-text"><span class="fa fa-search form-control-feedback"></span></div>
@@ -37,8 +38,8 @@
             <h3 class="">to-do list</h3>
         </div>
         <h4>Tasks</h4>
-        <a href="#" class="menu-tasks link-dark"><i class="fas fa-tasks mr-3"></i><span
-            class="sidebar-text">All Tasks</span></a>
+        <a href="#" class="menu-tasks link-dark"><i class="fas fa-tasks mr-3"></i><span class="sidebar-text">All
+                Tasks</span></a>
         <a href="#" class="menu-tasks link-dark"><i class="fas fa-calendar-day mr-3"></i><span
                 class="sidebar-text">Today</span></a>
         <a href="#" class="menu-tasks link-dark"><i class="fas fa-calendar-alt mr-3"></i><span class="sidebar-text">Due
@@ -48,23 +49,21 @@
                 class="sidebar-text">Urgent</span></a>
         <h4>Projects</h4>
         <div class="sidebar-projects">
-            <div class="input-group">
-                <input type="text" class="form-control form-control-sm" placeholder="Add new" aria-label="New Project name"
-                    aria-describedby="button-addon2" />
-                <button class="btn btn-outline-secondary" type="button" id="btn-addproject">
-                    <i class="fas fa-plus-circle"></i>
-                </button>
+            <form id="form-project-name" class="input-group">
+                <input type="text" id="new-project-input" class="form-control form-control-sm"
+                    placeholder="Create new project" required minlength="3" maxlength="30" />
+                <button type="submit" id="btn-add-project" class="btn btn-outline-secondary">
+                    <i class="fas fa-plus-circle"></i></button>
+            </form>
+            <div id="project-list">
             </div>
-            <a href="#" class="menu-projects link-dark"><i class="fas fa-angle-right"></i> The Odin Project</a>
-            <a href="#" class="menu-projects link-dark"><i class="fas fa-angle-right"></i> Contact</a>
-
         </div>
     </div>
 
     <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
     <div id="main-wrapper">
-        <div>
-            <h4 id="tasks-title">Title</h4>
+        <div id="project-header">
+            <h4 id="project-view-title">All Tasks </h4>
         </div>
         <div id="content" class="flex">
             <div class="task d-flex flex-row m-1">
@@ -76,58 +75,13 @@
                 <span class="m-1 align-self-center"><i class="fas fa-exclamation-circle"></i></span>
                 <span class="ml-auto m-1 align-self-center"><i class="fas fa-trash"></i></span>
             </div>
-            <div class="task d-flex flex-row m-1">
-                <input class="form-check-input align-self-center" type="checkbox" value=""
-                    aria-label="Checkbox for following text input">
-                <p class="taskTitle align-self-center">Task 1</p>
-                <span class="m-1 align-self-center "><i class="far fa-calendar-alt"></i></span>
-                <span class="m-1 align-self-center"><i class="fas fa-sticky-note"></i></span>
-                <span class="m-1 align-self-center"><i class="fas fa-exclamation-circle"></i></span>
-                <span class="ml-auto m-1 align-self-center"><i class="fas fa-trash"></i></span>
-            </div>
-            <div class="task d-flex flex-row m-1">
-                <input class="form-check-input align-self-center" type="checkbox" value=""
-                    aria-label="Checkbox for following text input">
-                <p class="taskTitle align-self-center">Task 1</p>
-                <span class="m-1 align-self-center "><i class="far fa-calendar-alt"></i></span>
-                <span class="m-1 align-self-center"><i class="fas fa-sticky-note"></i></span>
-                <span class="m-1 align-self-center"><i class="fas fa-exclamation-circle"></i></span>
-                <span class="ml-auto m-1 align-self-center"><i class="fas fa-trash"></i></span>
-            </div>
-            <div class="task d-flex flex-row m-1">
-                <input class="form-check-input align-self-center" type="checkbox" value=""
-                    aria-label="Checkbox for following text input">
-                <p class="taskTitle align-self-center">Task 1</p>
-                <span class="m-1 align-self-center "><i class="far fa-calendar-alt"></i></span>
-                <span class="m-1 align-self-center"><i class="fas fa-sticky-note"></i></span>
-                <span class="m-1 align-self-center"><i class="fas fa-exclamation-circle"></i></span>
-                <span class="ml-auto m-1 align-self-center"><i class="fas fa-trash"></i></span>
-            </div>
-            <div class="task d-flex flex-row m-1">
-                <input class="form-check-input align-self-center" type="checkbox" value=""
-                    aria-label="Checkbox for following text input">
-                <p class="taskTitle align-self-center">Task 1</p>
-                <span class="m-1 align-self-center "><i class="far fa-calendar-alt"></i></span>
-                <span class="m-1 align-self-center"><i class="fas fa-sticky-note"></i></span>
-                <span class="m-1 align-self-center"><i class="fas fa-exclamation-circle"></i></span>
-                <span class="ml-auto m-1 align-self-center"><i class="fas fa-trash"></i></span>
-            </div>
-            <div class="task d-flex flex-row m-1">
-                <input class="form-check-input align-self-center" type="checkbox" value=""
-                    aria-label="Checkbox for following text input">
-                <p class="taskTitle align-self-center">Task 1</p>
-                <span class="m-1 align-self-center "><i class="far fa-calendar-alt"></i></span>
-                <span class="m-1 align-self-center"><i class="fas fa-sticky-note"></i></span>
-                <span class="m-1 align-self-center"><i class="fas fa-exclamation-circle"></i></span>
-                <span class="ml-auto m-1 align-self-center"><i class="fas fa-trash"></i></span>
-            </div>
             <div id="create-task" class="input-group">
-                <input type="text" class="form-control" placeholder="Add Task" aria-label="Recipient's username with two button addons">
+                <input type="text" class="form-control" placeholder="Add Task">
                 <button class="btn btn-primary" type="button"><i class="fas fa-sliders-h"></i></button>
                 <button class="btn btn-primary" type="button"><i class="fas fa-plus-circle"></i></button>
-              </div>
+            </div>
         </div>
-        <img id="bgimg" src={bgToDo}/>
+        <img id="bgimg" src={bgToDo} />
 </body>
 
 </html>
