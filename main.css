@@ -10,14 +10,13 @@ a {
 	text-decoration: none !important;
 }
 
-#bgimg{
- 
-    width:400px; /* you can use % */
-    height: auto;
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    z-index: -100;
+#bgimg {
+	width: 400px; /* you can use % */
+	height: auto;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	z-index: -100;
 }
 
 #logo {
@@ -45,7 +44,6 @@ a {
 	font-size: 16px;
 }
 
-
 #sb-wrapper h4 {
 	text-align: center;
 	margin-top: 10px;
@@ -71,19 +69,6 @@ a {
 	font-size: 1.4rem;
 }
 
-.menu-projects {
-	/* Projects text size */
-	padding-top: 3px;
-	padding-bottom: 3px;
-	font-size: 0.6rem;
-	display: block;
-	width: 100%;
-}
-
-#sb-wrapper a:hover {
-	background-color: #f6f6f8;
-}
-
 #logo > h3 {
 	display: none; /* Hide Text Logo */
 	transition: all 1.5s ease;
@@ -94,7 +79,7 @@ a {
 	padding: 5px;
 }
 
-#btn-addproject {
+#btn-add-project {
 	display: none;
 }
 
@@ -102,7 +87,7 @@ a {
 	/* Main content display */
 	transition: margin-left 0.5s;
 	padding: 20px;
-    margin-left: 100px;
+	margin-left: 100px;
 }
 
 #content {
@@ -113,10 +98,8 @@ a {
 	flex-direction: column;
 	overflow: hidden;
 	padding-bottom: 0px;
-    position: relative;
+	position: relative;
 }
-
-
 
 /* Desktop Responsive Navigation */
 @media (min-width: 576px) {
@@ -156,7 +139,7 @@ a {
 		transition: 0.3s;
 	}
 
-	#btn-addproject {
+	#btn-add-project {
 		display: inline;
 	}
 
@@ -165,8 +148,7 @@ a {
 		transition: margin-left 0.5s;
 		padding: 20px;
 		margin-left: 250px;
-    }
-
+	}
 }
 
 /* The side navigation menu */
@@ -177,7 +159,7 @@ a {
 	z-index: 1; /* Stay on top */
 	top: 0; /* Stay at the top */
 	left: 0;
-	background-color: rgb(227, 227, 227); /* Black*/
+	background-color: #e3e3e3; /* Black*/
 	overflow-x: hidden; /* Disable horizontal scroll */
 	overflow-y: hidden; /* Disable horizontal scroll */
 	padding-top: 10px; /* Place content 10px from the top */
