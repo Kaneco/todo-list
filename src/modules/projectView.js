@@ -28,21 +28,27 @@ const createProjectHeader = (title) => {
 	// Project Title
 	let projectHeaderTitle = document.createElement("h4");
 	projectHeaderTitle.id = "project-view-title";
-	projectHeaderTitle.innerText = title;
-	// Project Delete and Edit Buttons
-	let iconsDiv = document.createElement("div");
-	iconsDiv.id = "project-settings";
-	let projectDelete = getIconElement("faTrash");
-	let projectEdit = getIconElement("faEdit");
+    projectHeaderTitle.innerText = title;
 	// Project Title
 	let projectTitle = document.createElement("span");
 	projectTitle.classList.add("project-title");
 	projectTitle.innerText = title;
-	// Add elements togetheer
-	projectHeader.appendChild(projectHeaderTitle);
-	projectHeader.appendChild(iconsDiv);
-	iconsDiv.appendChild(projectDelete);
-	iconsDiv.appendChild(projectEdit);
+	// Add elements together
+    projectHeader.appendChild(projectHeaderTitle);
+    // Add Project settings only for custom projects and not default ones
+    let defaultProjects = !((title == "All Tasks") || (title == "Today") || (title == "Due This Week") || (title == "Urgent"));
+    if (defaultProjects) {
+        // Project Delete and Edit Buttons
+        let iconsDiv = document.createElement("div");
+        iconsDiv.id = "project-settings";
+        let projectDelete = getIconElement("faTrash");
+        let projectEdit = getIconElement("faEdit");
+        projectDelete.id = "delete-project";
+        projectEdit.id = "edit-project";
+        projectHeader.appendChild(iconsDiv);
+        iconsDiv.appendChild(projectEdit);
+        iconsDiv.appendChild(projectDelete);
+    }
 	return projectHeader;
 };
 
@@ -61,7 +67,6 @@ const addProjectHeader = (element) => {
 	mainWrapperContent.insertBefore(element, document.getElementById("content"));
 };
 
-const removeProjectHeader = (name) => {};
 
 export {
 	createProjectLink,

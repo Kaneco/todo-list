@@ -14,6 +14,8 @@ let projectNameInput = document.getElementById("new-project-input");
 let buttonAddProject = document.getElementById("btn-add-project");
 let formProjectName = document.getElementById("form-project-name");
 let projectList = document.getElementById("project-list");
+let taskCategories = document.getElementById("task-categories");
+let projectHeader = document.getElementById("project-header");
 
 const taskController = () => {
 	// Event delegation from taskList
@@ -47,11 +49,25 @@ const projectController = () => {
 		event.preventDefault();
 		submitProject(projectNameInput.value);
 		formProjectName.reset();
+    });
+    	// Task Categories Sidebar functionality
+	taskCategories.addEventListener("click", (event) => {
+        let projectName = event.target.querySelector("span").innerText;
+        changeProjectHeader(projectName);
 	});
-	// Project List Sidebar Functions
+	// Project List Sidebar Functionality
 	projectList.addEventListener("click", (event) => {
         let projectName = event.target.querySelector("span").innerText;
         changeProjectHeader(projectName);
+    });
+    // Project Header Settings (Delete and Edit)
+    projectHeader.addEventListener("click", (event) => {
+        if (event.target.id == "delete-project") {
+            console.log("delete");
+        }
+        else if (event.target.id == "edit-project") {
+            console.log("edit");
+        }
 	});
 };
 

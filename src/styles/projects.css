@@ -54,9 +54,13 @@
 	width: 100%;
 }
 
-.project-list-sb * {
-	/* To avoid trigering events when clicking the Icon or Span elements inside the project menu
+
+	/* Both conditions below are to avoid trigering events when clicking the Icon or Span elements inside the project menu
     This is necessary because I am using eventDelegation and makes it easier to get the text 
     content without attributing a ID for each project link */
+.project-list-sb * {
 	pointer-events: none;
+}
+.menu-tasks * {
+    pointer-events: none;
 }

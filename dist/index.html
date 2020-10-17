@@ -7,7 +7,7 @@
     <title></title>
     <meta name="description" content="ToDo List" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="main.css" />
     <!-- <link rel="stylesheet" href="../src/styles/tasks.css" />
@@ -38,15 +38,18 @@
             <h3 class="">to-do list</h3>
         </div>
         <h4>Tasks</h4>
-        <a href="#" class="menu-tasks link-dark"><i class="fas fa-tasks mr-3"></i><span class="sidebar-text">All
-                Tasks</span></a>
-        <a href="#" class="menu-tasks link-dark"><i class="fas fa-calendar-day mr-3"></i><span
-                class="sidebar-text">Today</span></a>
-        <a href="#" class="menu-tasks link-dark"><i class="fas fa-calendar-alt mr-3"></i><span class="sidebar-text">Due
-                This
-                Week</span></a>
-        <a href="#" class="menu-tasks link-danger"><i class="fas fa-exclamation-circle mr-3"></i><span
-                class="sidebar-text">Urgent</span></a>
+        <div id="task-categories">
+            <a href="#" id="all-tasks" class="menu-tasks link-dark"><i class="fas fa-tasks mr-3"></i><span
+                    class="sidebar-text">All
+                    Tasks</span></a>
+            <a href="#" id="tasks-due-today" class="menu-tasks link-dark"><i class="fas fa-calendar-day mr-3"></i><span
+                    class="sidebar-text">Today</span></a>
+            <a href="#" id="tasks-due-this-week" class="menu-tasks link-dark">
+                <i class="fas fa-calendar-alt mr-3"></i>
+                <span class="sidebar-text">Due This Week</span></a>
+            <a href="#" id="urgent-tasks" class="menu-tasks link-danger"><i
+                    class="fas fa-exclamation-circle mr-3"></i><span class="sidebar-text">Urgent</span></a>
+        </div>
         <h4>Projects</h4>
         <div class="sidebar-projects">
             <form id="form-project-name" class="input-group">
