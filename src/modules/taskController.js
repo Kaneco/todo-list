@@ -2,10 +2,10 @@ import { createProject } from "./project";
 import { addProject } from "./projectView";
 import { taskManager, createTask } from "./task";
 import {
-	createProjectLink,
 	addProjectLink,
-	createProjectHeader,
-	addProjectHeader,
+    addProjectHeader,
+    removeProjectLink,
+    editProjectLink,
 } from "./projectView";
 
 let tasksTitle = document.getElementById("tasks-title");
@@ -47,40 +47,38 @@ const projectController = () => {
 	// Submit input default behaviour
 	formProjectName.addEventListener("submit", (event) => {
 		event.preventDefault();
-		submitProject(projectNameInput.value);
+		addProjectToDOM(projectNameInput.value);
 		formProjectName.reset();
-    });
-    	// Task Categories Sidebar functionality
+	});
+	// Task Categories Sidebar functionality
 	taskCategories.addEventListener("click", (event) => {
-        let projectName = event.target.querySelector("span").innerText;
-        changeProjectHeader(projectName);
+		let projectName = event.target.querySelector("span").innerText;
+		changeProjectHeader(projectName);
 	});
 	// Project List Sidebar Functionality
 	projectList.addEventListener("click", (event) => {
-        let projectName = event.target.querySelector("span").innerText;
-        changeProjectHeader(projectName);
-    });
-    // Project Header Settings (Delete and Edit)
-    projectHeader.addEventListener("click", (event) => {
-        if (event.target.id == "delete-project") {
-            console.log("delete");
-        }
-        else if (event.target.id == "edit-project") {
-            console.log("edit");
-        }
+		let projectName = event.target.querySelector("span").innerText;
+		changeProjectHeader(projectName);
 	});
 };
 
-const submitProject = (name) => {
-	let projectDomElement = createProjectLink(name);
-	addProjectLink(projectDomElement);
+const addProjectToDOM = (name) => {
+	addProjectLink(name);
 };
 
 const changeProjectHeader = (name) => {
-	let projectHeader = createProjectHeader(name);
-	addProjectHeader(projectHeader);
+    addProjectHeader(name);
+    // Project Header Settings (Delete and Edit)
+    let projectHeader = document.getElementById("project-header");
+	projectHeader.addEventListener("click", (event) => {
+		if (event.target.id == "delete-project") {
+            removeProjectLink(name);
+			changeProjectHeader("All Tasks");
+		} else if (event.target.id == "edit-project") {
+            document.getElementById("project-view-title").focus();
+		}
+	});
 };
-
 
 taskController();
 projectController();

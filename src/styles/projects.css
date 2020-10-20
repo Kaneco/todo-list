@@ -32,6 +32,7 @@
 	transform: scale(0.9);
 }
 
+
 /* Project Sidebar Formatting */
 #project-list svg {
 }
@@ -55,7 +56,7 @@
 }
 
 
-	/* Both conditions below are to avoid trigering events when clicking the Icon or Span elements inside the project menu
+	/* Conditions below are to avoid trigering events when clicking the Icon or Span elements inside the project menu
     This is necessary because I am using eventDelegation and makes it easier to get the text 
     content without attributing a ID for each project link */
 .project-list-sb * {
@@ -63,4 +64,27 @@
 }
 .menu-tasks * {
     pointer-events: none;
+}
+#project-settings path {
+    pointer-events: none;
+}
+
+	/* For editable fields */
+[contenteditable] {
+	transition: padding 0.3s ease-in-out;
+}
+
+[contenteditable]:hover,
+[contenteditable]:focus {
+	padding-left: 0.25em;
+}
+
+[contenteditable]:hover {
+	background: #fafafa;
+	outline: 1px solid #eee;
+}
+
+[contenteditable]:focus {
+	background: #efefef;
+	outline: 1px solid #0d6efd;
 }
