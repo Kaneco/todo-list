@@ -61,6 +61,20 @@ const checkIfDefault = (title) => {
 	return !projectDefaults;
 };
 
+//Change Edit Title Icon
+const swapEditIcon = () => {
+    let iconsDiv = document.getElementById("project-settings");
+    let iconSave = getIconElement("faSave");
+    let iconEdit = getIconElement("faEdit");
+    iconSave.id = "save-project";
+    iconEdit.id = "edit-project";
+    if (iconsDiv.childNodes[0].id == "save-project"){
+        iconsDiv.replaceChild(iconEdit, iconsDiv.childNodes[0]);
+    } else {
+        iconsDiv.replaceChild(iconSave, iconsDiv.childNodes[0]);
+    }
+}
+
 //Add and remove project Link from the Sidebar menu
 const addProjectLink = (name) => {
 	let projectDomElement = createProjectLink(name);
@@ -83,12 +97,12 @@ const removeProjectLink = (name) => {
 
 // Edit Project Name on Sidebar menu
 const editProjectLink = (name, newName) => {
-	var projectIterable = projectListSidebar.children;
+    var projectIterable = projectListSidebar.children;
 	for (var element of projectIterable) {
 		// Compare each elements .project-title to find the match with name provided
-		var projectTitle = element.querySelector(".project-title").innerText;
+        var projectTitle = element.querySelector(".project-title").innerText;
 		if (projectTitle == name) {
-			projectTitle.innerText = newName;
+			element.childNodes[1].innerText = newName;
 			break;
 		}
 	}
@@ -110,4 +124,4 @@ const addProjectHeader = (name) => {
 	}
 };
 
-export { addProjectLink, addProjectHeader, removeProjectLink, editProjectLink };
+export { addProjectLink, addProjectHeader, removeProjectLink, editProjectLink, swapEditIcon };
