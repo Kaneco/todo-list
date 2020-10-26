@@ -6,7 +6,7 @@ To-Do List App project done using Javascript, HTML and CSS, Bootstrap v5 Fontawe
 **NOT FINISHED - Work In Progress**
 
 ## Live Demo
-Here is the live demo: https://ze-gomes.github.io/library/
+Here is the live demo: https://ze-gomes.github.io/todo-list/
 
 ## Technologies Used:
  - Javascript
