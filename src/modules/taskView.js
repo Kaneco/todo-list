@@ -1,6 +1,7 @@
 import { createProject } from "./project";
 import { taskManager, createTask } from "./task";
 import { getIconElement } from "./domHelper";
+import datepicker from 'js-datepicker';
 
 let tasksTitle = document.getElementById("tasks-title");
 let tasksList = document.getElementById("content");
