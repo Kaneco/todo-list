@@ -16,16 +16,20 @@
 </head>
 
 <body>
+    <!-- Header/Search Bar-->
     <nav id="search-bar" class="navbar navbar-light bg-light justify-content-center">
-        <button id="sidebar-toggle" type="button" class="btn btn-light btn-sm"><span
-                class="navbar-toggler-icon"></span></button>
+        <button id="sidebar-toggle" type="button" class="btn btn-light btn-sm">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="input-group">
-            <div class="input-group-text"><span class="fa fa-search form-control-feedback"></span></div>
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-text">
+                <span class="fa fa-search form-control-feedback"></span>
+            </div>
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
         </div>
-
     </nav>
+    <!-- Sidebar-->
     <div id="sb-wrapper" class="sidenav container d-flex">
         <div id="logo">
             <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check2-square" fill="#C60021"
@@ -40,8 +44,7 @@
         <h4>Tasks</h4>
         <div id="task-categories">
             <a href="#" id="all-tasks" class="menu-tasks link-dark"><i class="fas fa-tasks mr-3"></i><span
-                    class="sidebar-text">All
-                    Tasks</span></a>
+                    class="sidebar-text">All Tasks</span></a>
             <a href="#" id="tasks-due-today" class="menu-tasks link-dark"><i class="fas fa-calendar-day mr-3"></i><span
                     class="sidebar-text">Today</span></a>
             <a href="#" id="tasks-due-this-week" class="menu-tasks link-dark">
@@ -56,35 +59,88 @@
                 <input type="text" id="new-project-input" class="form-control form-control-sm"
                     placeholder="Create new project" required minlength="3" maxlength="30" />
                 <button type="submit" id="btn-add-project" class="btn btn-outline-secondary">
-                    <i class="fas fa-plus-circle"></i></button>
+                    <i class="fas fa-plus-circle"></i>
+                </button>
             </form>
-            <div id="project-list">
-            </div>
+            <div id="project-list"></div>
         </div>
     </div>
 
-    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+    <!-- Main Content-->
     <div id="main-wrapper">
         <div id="project-header">
-            <h4 id="project-view-title">All Tasks </h4>
+            <h4 id="project-view-title">All Tasks</h4>
         </div>
         <div id="content" class="flex">
             <div class="task d-flex flex-row m-1">
                 <input class="form-check-input align-self-center" type="checkbox" value=""
-                    aria-label="Checkbox for following text input">
+                    aria-label="Checkbox for following text input" />
                 <p class="taskTitle align-self-center">Task 1</p>
-                <span class="m-1 align-self-center "><i class="far fa-calendar-alt"></i></span>
+                <span class="m-1 align-self-center"><i class="far fa-calendar-alt"></i></span>
                 <span class="m-1 align-self-center"><i class="fas fa-sticky-note"></i></span>
                 <span class="m-1 align-self-center"><i class="fas fa-exclamation-circle"></i></span>
                 <span class="ml-auto m-1 align-self-center"><i class="fas fa-trash"></i></span>
             </div>
             <div id="create-task" class="input-group">
-                <input type="text" class="form-control" placeholder="Add Task">
-                <button class="btn btn-primary" type="button"><i class="fas fa-sliders-h"></i></button>
-                <button class="btn btn-primary" type="button"><i class="fas fa-plus-circle"></i></button>
+                <input type="text" class="form-control" placeholder="Add Task" />
+                <button class="btn btn-primary" type="button">
+                    <i class="fas fa-sliders-h"></i>
+                </button>
+                <button class="btn btn-primary" type="button">
+                    <i class="fas fa-plus-circle"></i>
+                </button>
             </div>
+            <button type="button" class="btn btn-demo" data-toggle="modal" data-target="#myModal2">
+                Task Modal Test
+            </button>
         </div>
-        <img id="bgimg" src={bgToDo} />
+
+        <!-- Modal -->
+        <div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h4 id="modal-task-title">Task Title</h4>
+                        <div class="mb-3">
+                            <label for="modal-date-created" class="form-label">Date Created:</label>
+                            <input type="text" id="modal-date-created" class="form-control" placeholder="Disabled input"
+                                disabled />
+                        </div>
+                        <div class="mb-3">
+                            <label for="modal-date-due" class="form-label">Date Due:</label>
+                            <input type="date" id="modal-date-due" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="modal-task-notes" class="form-label">Notes:</label>
+                            <textarea class="form-control" id="modal-task-notes" rows="3"></textarea>
+                        </div>
+                        <div class="form-check mb-5">
+                            <input class="form-check-input" type="checkbox" value="" id="modal-task-priority" />
+                            <label class="form-check-label" for="modal-task-priority">
+                                Priority
+                            </label>
+                        </div>  
+                        <label class="form-check-label mb-4" for="modal-task-done">
+                            <h3>Task Done</h3>
+                        </label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="modal-task-done" />
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                <!-- modal-content -->
+            </div>
+            <!-- modal-dialog -->
+        </div>
+        <!-- modal -->
+        <img id="bgimg" src="{bgToDo}" />
 </body>
 
 </html>
