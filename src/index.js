@@ -1,4 +1,3 @@
-import bootstrap from "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './styles/header.css';
 import './styles/tasks.css';
@@ -13,6 +12,7 @@ import '@fortawesome/fontawesome-free/js/solid'
 import '@fortawesome/fontawesome-free/js/regular'
 import '@fortawesome/fontawesome-free/js/brands'
 import fontawesome from '@fortawesome/fontawesome-free'
+import { initProject } from './modules/taskController';
 
 fontawesome.config = { autoReplaceSvg: false };
 
@@ -27,5 +27,8 @@ function closeNav() {
 	document.getElementById("sb-wrapper").style.width = "0";
 	document.getElementById("main").style.marginLeft = "0";
 }
+
+initProject();
+
 
 

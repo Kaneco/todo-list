@@ -82,28 +82,25 @@
                 <span class="ml-auto m-1 align-self-center"><i class="fas fa-trash"></i></span>
             </div>
             <div id="create-task" class="input-group">
-                <input type="text" class="form-control" placeholder="Add Task" />
-                <button class="btn btn-primary" type="button">
+                <input id="task-quick-add" type="text" class="form-control" placeholder="Add Task" />
+                <button id="task-extra-settings"  class="btn btn-primary" type="button">
                     <i class="fas fa-sliders-h"></i>
                 </button>
                 <button class="btn btn-primary" type="button">
                     <i class="fas fa-plus-circle"></i>
                 </button>
             </div>
-            <button type="button" class="btn btn-demo" data-toggle="modal" data-target="#myModal2">
-                Task Modal Test
-            </button>
         </div>
 
         <!-- Modal -->
-        <div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+        <div class="modal right fade" id="task-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <h4 id="modal-task-title">Task Title</h4>
+                        <h4 id="modal-task-title" contenteditable="true"></h4>
                         <div class="mb-3">
                             <label for="modal-date-created" class="form-label">Date Created:</label>
-                            <input type="text" id="modal-date-created" class="form-control" placeholder="Disabled input"
+                            <input type="text" id="modal-date-created" class="form-control" placeholder="Disabled"
                                 disabled />
                         </div>
                         <div class="mb-3">
@@ -114,14 +111,14 @@
                             <label for="modal-task-notes" class="form-label">Notes:</label>
                             <textarea class="form-control" id="modal-task-notes" rows="3"></textarea>
                         </div>
-                        <div class="form-check mb-5">
+                        <div id="modal-task-priority-box" class="form-check mb-5">
                             <input class="form-check-input" type="checkbox" value="" id="modal-task-priority" />
                             <label class="form-check-label" for="modal-task-priority">
                                 Priority
                             </label>
-                        </div>  
+                        </div>
                         <label class="form-check-label mb-4" for="modal-task-done">
-                            <h3>Task Done</h3>
+                            <h3>Done:</h3>
                         </label>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="modal-task-done" />
@@ -129,7 +126,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        <button type="button" id="close-modal" class="btn btn-secondary" data-dismiss="modal">
                             Close
                         </button>
                         <button type="button" class="btn btn-primary">Save changes</button>

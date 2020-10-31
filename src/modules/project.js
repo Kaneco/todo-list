@@ -75,17 +75,30 @@ const createProject = (name) => {
 		}
 	};
 
+	const getTaskObject = (index) => {
+		return tasks[index];
+	}
+
 	// Find Task Index
 	// DateCreated is a Date() object which should serve as a unique identifier for each task
-	const findTaskIndex = (task) => {
+	const findTaskIndex = (task, ...args) => {
 		tasks = getTasks();
+		// Unique identifiers
+		let dateCreated;
+		let title;
+		if (task === 0) {
+			console.log(args);
+			title = args[1];
+			dateCreated = args[1];
+		} else {
+			title = taskManager.getTitle(task);
+			dateCreated = taskManager.getDateCreated(task).getTime();
+		}
 		// compare both DateCreated and Name to get a unique identifier
 		const foundTaskIndex = tasks.findIndex(
 			(x) =>
-				taskManager.getDateCreated(x).getTime() ===
-					taskManager.getDateCreated(task).getTime() &&
-				taskManager.getTitle(x) === taskManager.getTitle(task)
-		);
+				taskManager.getDateCreated(x).getTime() === dateCreated &&
+				taskManager.getTitle(x) === title);
 		return foundTaskIndex;
 	};
 
@@ -93,6 +106,10 @@ const createProject = (name) => {
 		let taskId = findTaskIndex(task);
 		return taskAction(task, property);
 	};
+
+	const update = () => {
+		localStorage.addProject(name, tasks);
+	}
 
 
 	return {
@@ -103,8 +120,10 @@ const createProject = (name) => {
 		removeTask,
 		editTask,
 		getTaskInfo,
+		update
 	};
 };
+
 
 // Get TaskList from a Project from storage and convert it into a project object again
 const getProject = (name) => {

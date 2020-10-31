@@ -9,4 +9,6 @@ const getIconElement = (iconName) => {
 	return icon(icons[iconName]).node.item(0);
 };
 
+
+
 export { getIconElement };

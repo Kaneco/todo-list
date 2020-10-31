@@ -155,6 +155,21 @@
 	align-self: center;
 }
 
+/* #E3E3E3 Gray  #F6F6F8 White #C60021 Red*/
+#modal-task-priority-box{
+	background-color:#F6F6F8;
+	padding: 10px 30px 10px 50px;
+	border-radius: 3px;
+	border: 1px solid #E3E3E3;
+	color: #C60021;
+	font-weight: 600;
+}
+
+#modal-task-priority-box:hover{
+
+}
+
+
 /* Desktop Responsive Navigation */
 @media (min-width: 576px) {
 }
