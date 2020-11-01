@@ -1,9 +1,7 @@
-import { createProject } from './project';
-import { taskManager, createTask } from './task';
+import { taskManager } from './task';
 import { getIconElement } from './domHelper';
 import datepicker from 'js-datepicker';
 
-let tasksTitle = document.getElementById('tasks-title');
 let tasksList = document.getElementById('content'); // 	// Show task modal if you click task
 var taskModal = document.getElementById('task-modal');
 
@@ -15,31 +13,49 @@ const clearTaskView = () => {
 };
 
 // Render each task block
-const renderTask = (project, task) => {
+const renderTask = (task) => {
 	let taskDiv = document.createElement('div');
 	taskDiv.classList.add('task', 'd-flex', 'flex-row', 'm-1');
-	taskDiv.dataset.dateCreated = project.getTaskInfo(task, 'dateCreated');
+	taskDiv.dataset.dateCreated = taskManager.getDateCreated(task);
 	// Task Checkbox
 	let taskCheckbox = document.createElement('input');
 	taskCheckbox.classList.add('form-check-input', 'align-self-center');
 	taskCheckbox.setAttribute('type', 'checkbox');
 	taskCheckbox.setAttribute('value', '');
 	taskCheckbox.setAttribute('value', '');
+	taskDiv.appendChild(taskCheckbox);
 	// Task Title
 	let taskTitle = document.createElement('p');
 	taskTitle.classList.add('taskTitle', 'align-self-center');
-	taskTitle.innerText = project.getTaskInfo(task, 'title');
+	taskTitle.innerText = taskManager.getTitle(task);
+	taskDiv.appendChild(taskTitle);
 	// Add Task Icons
-	let taskDateIcon = renderTaskIcon('faCalendarAlt');
-	let taskNoteIcon = renderTaskIcon('faStickyNote');
-	let taskPriorityIcon = renderTaskIcon('faExclamationCircle');
+	let note = taskManager.getNote(task);
+	let priority = taskManager.getPriority(task);
+	let dateDue = taskManager.getDateDue(task);
+
+	// Render Date Due icon only if task has date due set
+	if (!(dateDue == '')) {
+		let taskDateIcon = renderTaskIcon('faCalendarAlt');
+		taskDiv.appendChild(taskDateIcon);
+	}
+	// Render Note Icon only if task has note set
+	if (!(note == '')) {
+		let taskNoteIcon = renderTaskIcon('faStickyNote');
+		taskNoteIcon.dataset.toggle = "popover";
+		taskNoteIcon.setAttribute("title", "Note:");
+		taskNoteIcon.dataset.content = note;
+		taskDiv.appendChild(taskNoteIcon);
+	}
+	// Render Priority Icon only if task has priority set
+	if (priority == true) {
+		let taskPriorityIcon = renderTaskIcon('faExclamationCircle');
+		taskPriorityIcon.dataset.toggle = "popover";
+		taskPriorityIcon.setAttribute("title", "Priority Task");
+		taskDiv.appendChild(taskPriorityIcon);
+	}
 	let taskDeleteIcon = renderTaskIcon('faTrash');
 	taskDeleteIcon.classList.add('ml-auto');
-	taskDiv.appendChild(taskCheckbox);
-	taskDiv.appendChild(taskTitle);
-	taskDiv.appendChild(taskDateIcon);
-	taskDiv.appendChild(taskNoteIcon);
-	taskDiv.appendChild(taskPriorityIcon);
 	taskDiv.appendChild(taskDeleteIcon);
 	// Append elements
 	tasksList.insertBefore(taskDiv, document.getElementById('create-task'));
@@ -83,6 +99,5 @@ const closeTaskModal = () => {
 	taskModal.removeAttribute('aria-modal', true);
 	taskModal.setAttribute('aria-hidden', true);
 };
-
 
 export { clearTaskView, renderTask, openTaskModal, closeTaskModal };

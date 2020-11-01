@@ -1,9 +1,14 @@
-import { taskManager, createTask } from "./task";
-import * as localStorage from "./localStorage";
+import { taskManager, createTask } from './task';
+import * as localStorage from './localStorage';
 
 // Project factory
-const createProject = (name) => {
+const createProject = (name, taskList) => {
 	let tasks = [];
+
+	// Create Project with existing tasklist (used when retrieving from localStorage)
+	if (Array.isArray(taskList)){
+		tasks = taskList;
+	}
 
 	const getTasks = () => tasks;
 
@@ -36,39 +41,39 @@ const createProject = (name) => {
 	const taskAction = (task, property, value) => {
 		if (value === undefined) {
 			switch (property) {
-				case "title":
+				case 'title':
 					return taskManager.getTitle(task);
-				case "dateCreated":
+				case 'dateCreated':
 					return taskManager.getDateCreated(task);
-				case "dateDue":
+				case 'dateDue':
 					return taskManager.getDateDue(task);
-				case "priority":
+				case 'priority':
 					return taskManager.getPriority(task);
-				case "note":
+				case 'note':
 					return taskManager.getNote(task);
 				default:
 					console.error(
-						"Error accessing Getter for task - Property Name not valid"
+						'Error accessing Getter for task - Property Name not valid'
 					);
 					break;
 			}
 		} else {
 			switch (property) {
-				case "title":
+				case 'title':
 					taskManager.setTitle(task, value);
 					return task;
-				case "dateDue":
+				case 'dateDue':
 					taskManager.setDateDue(task, value);
 					return task;
-				case "priority":
+				case 'priority':
 					taskManager.setPriority(task, value);
 					return task;
-				case "note":
+				case 'note':
 					taskManager.setNote(task, value);
 					return task;
 				default:
 					console.error(
-						"Error accessing Setter for task - Property Name not valid"
+						'Error accessing Setter for task - Property Name not valid'
 					);
 					break;
 			}
@@ -77,7 +82,7 @@ const createProject = (name) => {
 
 	const getTaskObject = (index) => {
 		return tasks[index];
-	}
+	};
 
 	// Find Task Index
 	// DateCreated is a Date() object which should serve as a unique identifier for each task
@@ -98,7 +103,8 @@ const createProject = (name) => {
 		const foundTaskIndex = tasks.findIndex(
 			(x) =>
 				taskManager.getDateCreated(x).getTime() === dateCreated &&
-				taskManager.getTitle(x) === title);
+				taskManager.getTitle(x) === title
+		);
 		return foundTaskIndex;
 	};
 
@@ -109,8 +115,7 @@ const createProject = (name) => {
 
 	const update = () => {
 		localStorage.addProject(name, tasks);
-	}
-
+	};
 
 	return {
 		name,
@@ -120,14 +125,15 @@ const createProject = (name) => {
 		removeTask,
 		editTask,
 		getTaskInfo,
-		update
+		update,
 	};
 };
-
 
 // Get TaskList from a Project from storage and convert it into a project object again
 const getProject = (name) => {
 	let projectTaskList = localStorage.getTaskList(name);
+	console.log("getproject");
+	console.log(projectTaskList);
 	return createProject(name, projectTaskList);
 };
 

@@ -1,6 +1,6 @@
 // library.js
-import { icon, library } from "@fortawesome/fontawesome-svg-core";
-import * as icons from "./icons";
+import { icon, library } from '@fortawesome/fontawesome-svg-core';
+import * as icons from './icons';
 
 library.add(icons);
 
@@ -8,7 +8,5 @@ library.add(icons);
 const getIconElement = (iconName) => {
 	return icon(icons[iconName]).node.item(0);
 };
-
-
 
 export { getIconElement };

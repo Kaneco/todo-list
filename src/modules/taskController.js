@@ -1,3 +1,4 @@
+import { renderTask, openTaskModal, closeTaskModal } from './taskView';
 import { createProject, getProject } from './project';
 import { taskManager, createTask } from './task';
 import {
@@ -7,9 +8,7 @@ import {
 	editProjectLink,
 	swapEditIcon,
 } from './projectView';
-import { renderTask, openTaskModal, closeTaskModal } from './taskView';
 import bootstrap from 'bootstrap';
-import { Modal } from 'bootstrap';
 
 let tasksTitle = document.getElementById('tasks-title');
 let taskList = document.getElementById('content');
@@ -34,10 +33,10 @@ const taskController = () => {
 			// If you select the delete button
 			console.log(event.target.closest('.task').dataset.dateCreated);
 		}
-		if (event.target.closest('.fa-sticky-note')) {
-			// If you select the note
-			console.log('noteButton');
-		}
+		// if (event.target.closest('.fa-sticky-note')) {
+		// 	// If you select the note
+		// 	console.log('noteButton');
+		// }
 		if (event.target.closest('.fa-calendar-day')) {
 			// If you select the calendar
 			console.log('calendarAlt');
@@ -46,11 +45,14 @@ const taskController = () => {
 			// Show task modal if you click the task or taskTitle
 			event.target.classList.contains('task') ||
 			event.target.classList.contains('taskTitle')
-		) { // only open if the modal is not already open 
+		) {
+			// only open if the modal is not already open
 			if (!document.body.classList.contains('modal-open')) {
 				openTaskModal();
 				console.log(event.target.closest('.task').childNodes[1].innerText);
-				modalTitle.innerText = event.target.closest('.task').childNodes[1].innerText;
+				modalTitle.innerText = event.target.closest(
+					'.task'
+				).childNodes[1].innerText;
 				//modalDateCreated = event.target.closest('.task').dataset.dateCreated;
 			}
 		}
@@ -69,7 +71,7 @@ const taskController = () => {
 		.getElementById('task-extra-settings')
 		.addEventListener('click', (event) => {
 			openTaskModal();
-			modalTitle.innerText = document.getElementById("task-quick-add").value; 
+			modalTitle.innerText = document.getElementById('task-quick-add').value;
 		});
 
 	let modalTaskTitle = document.getElementById('modal-task-title');
@@ -236,15 +238,21 @@ const changeProjectHeader = (name) => {
 	});
 };
 
+// Get info from project model to taskView
+const getInfo = (project, task, property ) => {
+	return project.getTaskInfo(task, property);
+}
+
+
 // Change the project header (name and icons)
-const initProject = () => {
-	let project = getProject("All Tasks");
+const initProject = (projectName) => {
+	let project = getProject('All Tasks');
 	console.log(project);
 	for (const task of project.getTasks()) {
-		console.log(task);
-		renderTask(project.name, task);
-	  }
+		renderTask(task);
+	}
 };
+
 
 taskController();
 projectController();
@@ -252,12 +260,15 @@ let defaultProject = createProject('All Tasks');
 let task1 = createTask('Task1');
 let task2 = createTask('Task2');
 let task3 = createTask('Task3');
+taskManager.setNote(task1, "Test Note");
+taskManager.setPriority(task3, true);
 defaultProject.addTask(task1);
 defaultProject.addTask(task2);
 defaultProject.addTask(task3);
 defaultProject.update();
 
+initProject('All Tasks');
 
 
 
-export { taskController, initProject};
+export { taskController, initProject, getInfo };

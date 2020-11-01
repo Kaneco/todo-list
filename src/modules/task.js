@@ -34,9 +34,9 @@ const createTask = (title) => {
 	const task = {};
 	task.title = title;
 	task.dateCreated = new Date().toJSON(); // convert to a format that isn't distorted by json stringify
-	task.dateDue = "";
+	task.dateDue = '';
 	task.priority = false;
-	task.note = "";
+	task.note = '';
 	task.done = false;
 	return task;
 };
