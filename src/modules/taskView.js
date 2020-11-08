@@ -42,16 +42,16 @@ const renderTask = (task) => {
 	// Render Note Icon only if task has note set
 	if (!(note == '')) {
 		let taskNoteIcon = renderTaskIcon('faStickyNote');
-		taskNoteIcon.dataset.toggle = "popover";
-		taskNoteIcon.setAttribute("title", "Note:");
-		taskNoteIcon.dataset.content = note;
+		taskNoteIcon.dataset.toggle = 'popover';
+		taskNoteIcon.setAttribute('title', note);
+		//taskNoteIcon.dataset.content = note;
 		taskDiv.appendChild(taskNoteIcon);
 	}
 	// Render Priority Icon only if task has priority set
 	if (priority == true) {
 		let taskPriorityIcon = renderTaskIcon('faExclamationCircle');
-		taskPriorityIcon.dataset.toggle = "popover";
-		taskPriorityIcon.setAttribute("title", "Priority Task");
+		taskPriorityIcon.dataset.toggle = 'popover';
+		taskPriorityIcon.setAttribute('title', 'Priority Task');
 		taskDiv.appendChild(taskPriorityIcon);
 	}
 	let taskDeleteIcon = renderTaskIcon('faTrash');
@@ -59,6 +59,7 @@ const renderTask = (task) => {
 	taskDiv.appendChild(taskDeleteIcon);
 	// Append elements
 	tasksList.insertBefore(taskDiv, document.getElementById('create-task'));
+
 	return taskDiv;
 };
 

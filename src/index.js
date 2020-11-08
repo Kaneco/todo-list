@@ -14,6 +14,7 @@ import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 import fontawesome from '@fortawesome/fontawesome-free';
 import { initProject } from './modules/taskController';
+import 'bootstrap';
 
 fontawesome.config = { autoReplaceSvg: false };
 

@@ -8,7 +8,7 @@ import {
 	editProjectLink,
 	swapEditIcon,
 } from './projectView';
-import bootstrap from 'bootstrap';
+import * as bootstrap from 'bootstrap';
 
 let tasksTitle = document.getElementById('tasks-title');
 let taskList = document.getElementById('content');
@@ -31,7 +31,7 @@ const taskController = () => {
 	taskList.addEventListener('click', (event) => {
 		if (event.target.closest('.fa-trash')) {
 			// If you select the delete button
-			console.log(event.target.closest('.task').dataset.dateCreated);
+			console.log(event.target.closest('.task'));
 		}
 		// if (event.target.closest('.fa-sticky-note')) {
 		// 	// If you select the note
@@ -254,20 +254,28 @@ const initProject = (projectName) => {
 };
 
 
+
+
 taskController();
 projectController();
+
+
 let defaultProject = createProject('All Tasks');
 let task1 = createTask('Task1');
 let task2 = createTask('Task2');
 let task3 = createTask('Task3');
-taskManager.setNote(task1, "Test Note");
+// let priorityPopover = ;
+// var popover = new bootstrap.Popover(priorityPopover, {trigger: "click hover focus"});
+taskManager.setNote(task1, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum");
 taskManager.setPriority(task3, true);
 defaultProject.addTask(task1);
 defaultProject.addTask(task2);
 defaultProject.addTask(task3);
 defaultProject.update();
-
 initProject('All Tasks');
+
+console.log(document.querySelector(`[data-date-created="${taskManager.getDateCreated(task1)}"]`));
+
 
 
 

@@ -6,11 +6,11 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@popperjs/core": "^2.5.4",
     "bootstrap": "^5.0.0-alpha1",
     "bootstrap-icons": "^1.0.0",
     "date-fns": "^2.16.1",
-    "js-datepicker": "^5.16.0",
-    "popper.js": "^1.16.1"
+    "js-datepicker": "^5.16.0"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
