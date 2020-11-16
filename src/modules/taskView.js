@@ -1,6 +1,7 @@
 import { taskManager } from './task';
 import { getIconElement } from './domHelper';
 import datepicker from 'js-datepicker';
+import * as bootstrap from 'bootstrap';
 
 let tasksList = document.getElementById('content'); // 	// Show task modal if you click task
 var taskModal = document.getElementById('task-modal');
@@ -43,8 +44,8 @@ const renderTask = (task) => {
 	if (!(note == '')) {
 		let taskNoteIcon = renderTaskIcon('faStickyNote');
 		taskNoteIcon.dataset.toggle = 'popover';
-		taskNoteIcon.setAttribute('title', note);
-		//taskNoteIcon.dataset.content = note;
+		taskNoteIcon.setAttribute('title', 'Note:');
+		taskNoteIcon.dataset.content = note;
 		taskDiv.appendChild(taskNoteIcon);
 	}
 	// Render Priority Icon only if task has priority set

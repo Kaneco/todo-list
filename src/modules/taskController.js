@@ -239,10 +239,9 @@ const changeProjectHeader = (name) => {
 };
 
 // Get info from project model to taskView
-const getInfo = (project, task, property ) => {
+const getInfo = (project, task, property) => {
 	return project.getTaskInfo(task, property);
-}
-
+};
 
 // Change the project header (name and icons)
 const initProject = (projectName) => {
@@ -251,22 +250,31 @@ const initProject = (projectName) => {
 	for (const task of project.getTasks()) {
 		renderTask(task);
 	}
+	// Initiate all popovers
+	var popoverTriggerList = [].slice.call(
+		document.querySelectorAll('[data-toggle="popover"]')
+	);
+	var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+		return new bootstrap.Popover(popoverTriggerEl, {
+			trigger: 'click hover focus',
+		});
+	});
+	console.log("popoverlist")
+	console.log(popoverList);
 };
-
-
-
 
 taskController();
 projectController();
-
 
 let defaultProject = createProject('All Tasks');
 let task1 = createTask('Task1');
 let task2 = createTask('Task2');
 let task3 = createTask('Task3');
-// let priorityPopover = ;
-// var popover = new bootstrap.Popover(priorityPopover, {trigger: "click hover focus"});
-taskManager.setNote(task1, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum");
+
+taskManager.setNote(
+	task1,
+	'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum'
+);
 taskManager.setPriority(task3, true);
 defaultProject.addTask(task1);
 defaultProject.addTask(task2);
@@ -274,9 +282,11 @@ defaultProject.addTask(task3);
 defaultProject.update();
 initProject('All Tasks');
 
-console.log(document.querySelector(`[data-date-created="${taskManager.getDateCreated(task1)}"]`));
-
-
-
+// let notePopover = document.querySelector(
+// 	`[data-date-created="${taskManager.getDateCreated(task)}"]`
+// );
+// let popover = new bootstrap.Popover(notePopover, {
+// 	trigger: 'click hover focus',
+// });
 
 export { taskController, initProject, getInfo };
