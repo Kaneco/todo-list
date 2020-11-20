@@ -8,15 +8,8 @@ import { createProject } from './modules/project';
 import { format, formatDistance, formatRelative, subDays } from 'date-fns';
 import { clearTaskView, renderTask } from './modules/taskView';
 import { taskController } from './modules/taskController';
-import '@fortawesome/fontawesome-free/js/fontawesome';
-import '@fortawesome/fontawesome-free/js/solid';
-import '@fortawesome/fontawesome-free/js/regular';
-import '@fortawesome/fontawesome-free/js/brands';
-import fontawesome from '@fortawesome/fontawesome-free';
 import { initProject } from './modules/taskController';
-import 'bootstrap';
 
-fontawesome.config = { autoReplaceSvg: false };
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav() {

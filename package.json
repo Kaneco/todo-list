@@ -13,12 +13,12 @@
     "js-datepicker": "^5.16.0"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.1",
     "css-loader": "^4.3.0",
     "file-loader": "^6.1.0",
     "html-loader": "^1.3.1",
-    "style-loader": "^1.2.1",
-    "webpack": "^4.44.2",
+    "popper.js": "^1.16.1",
+    "style-loader": "^1.3.0",
+    "webpack": "^5.5.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
@@ -30,17 +30,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kaneco/todo-list.git"
+    "url": "git+https://github.com/ze-gomes/todo-list.git"
   },
   "keywords": [
     "js",
     "todo",
     "list"
   ],
-  "author": "Kaneco",
+  "author": "ze-gomes",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Kaneco/todo-list/issues"
+    "url": "https://github.com/ze-gomes/todo-list/issues"
   },
-  "homepage": "https://github.com/Kaneco/todo-list#readme"
+  "homepage": "https://github.com/ze-gomes/todo-list#readme"
 }

@@ -1,3 +1,7 @@
+body{
+	background-image:url('../images/todo.jpg');
+}
+
 /* Project Header Formatting */
 #project-header {
 	display: grid;
